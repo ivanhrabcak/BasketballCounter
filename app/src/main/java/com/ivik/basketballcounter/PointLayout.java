@@ -77,7 +77,7 @@ public class PointLayout extends LinearLayout {
     }
 
     public void init() throws Exception {
-        setFocusable(true);
+        //setFocusable(true);
         pointsA = 0;
         pointsB = 0;
 
