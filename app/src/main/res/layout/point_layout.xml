@@ -20,7 +20,8 @@
             android:textSize="35sp"
             android:id="@+id/textView"
             android:text="@string/app_name"
-            android:textStyle="bold">
+            android:textStyle="bold"
+            android:clickable="true">
         </TextView>
 
         <TextView
@@ -36,21 +37,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+1 Point"
-            android:id="@+id/btn1">
+            android:id="@+id/btn1"
+            android:padding="25dp">
         </Button>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+2 Points"
-            android:id="@+id/btn2">
+            android:id="@+id/btn2"
+            android:padding="25dp">
         </Button>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="+3 Points"
-            android:id="@+id/btn3">
+            android:id="@+id/btn3"
+            android:padding="25dp">
+        </Button>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:id="@+id/backbtn"
+            android:padding="10dp">
         </Button>
 
     </LinearLayout>

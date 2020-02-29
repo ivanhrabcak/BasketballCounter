@@ -2,13 +2,18 @@ package com.ivik.basketballcounter;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class MainActivity extends AppCompatActivity {
     private String teamName1 = "Team 1";
@@ -18,9 +23,44 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout layout;
     private PointLayout team1View;
     private PointLayout team2View;
+    private int previousA;
+    private int previousB;
+
+    private void changeTeamNamePopup(final String teamName) {
+        AlertDialog.Builder alert = new AlertDialog.Builder(this);
+
+        alert.setTitle("Change team name:");
+        alert.setMessage("New team name:");
+
+        final EditText input = new EditText(this);
+        alert.setView(input);
+
+        alert.setPositiveButton("Change", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                TextView tv;
+                if (teamName.equals("Team 1")) {
+                    tv = team1View.findViewById(R.id.textView);
+                }
+                else {
+                    tv = team2View.findViewById(R.id.textView);
+                }
+                tv.setText(input.getText().toString());
+            }
+        });
+
+        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int whichButton) {
+                return;
+            }
+        });
+        alert.show();
+    }
 
 
     private void ButtonClicked(String teamName, int step) {
+        previousA = pointsA;
+        previousB = pointsB;
+
         if (teamName == teamName1) {
             pointsA += step;
         }
@@ -51,11 +91,23 @@ public class MainActivity extends AppCompatActivity {
         layout.addView(separator);
         layout.addView(team2View);
 
-        TextView tv = team1View.findViewById(R.id.textView);
+        final TextView tv = team1View.findViewById(R.id.textView);
         tv.setText("Team 1");
+        tv.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeTeamNamePopup("Team 1");
+            }
+        });
 
-        TextView tv1 = team2View.findViewById(R.id.textView);
+        final TextView tv1 = team2View.findViewById(R.id.textView);
         tv1.setText("Team 2");
+        tv1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                changeTeamNamePopup("Team 2");
+            }
+        });
 
         Button button1 = team1View.findViewById(R.id.btn1);                 // +1 point
         button1.setOnClickListener(new View.OnClickListener() {
@@ -98,6 +150,26 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 ButtonClicked(teamName2, 3);
+            }
+        });
+
+        Button backButton1 = team1View.findViewById(R.id.backbtn);
+        backButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pointsA -= previousA;
+                tv.setText(pointsA);
+                previousA = 0;
+            }
+        });
+
+        Button backButton2 = findViewById(R.id.backbtn);
+        backButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pointsB -= previousB;
+                tv.setText(pointsB);
+                previousB = 0;
             }
         });
     }
