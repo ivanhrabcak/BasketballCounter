@@ -153,24 +153,24 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        Button backButton1 = team1View.findViewById(R.id.backbtn);
-        backButton1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pointsA -= previousA;
-                tv.setText(pointsA);
-                previousA = 0;
-            }
-        });
-
-        Button backButton2 = findViewById(R.id.backbtn);
-        backButton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                pointsB -= previousB;
-                tv.setText(pointsB);
-                previousB = 0;
-            }
-        });
+//        Button backButton1 = team1View.findViewById(R.id.backbtn);
+//        backButton1.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                pointsA -= previousA;
+//                tv.setText(pointsA);
+//                previousA = 0;
+//            }
+//        });
+//
+//        Button backButton2 = findViewById(R.id.backbtn);
+//        backButton2.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                pointsB -= previousB;
+//                tv.setText(pointsB);
+//                previousB = 0;
+//            }
+//        });
     }
 }

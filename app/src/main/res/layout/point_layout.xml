@@ -57,13 +57,13 @@
             android:padding="25dp">
         </Button>
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Back"
-            android:id="@+id/backbtn"
-            android:padding="10dp">
-        </Button>
+<!--        <Button-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Back"-->
+<!--            android:id="@+id/backbtn"-->
+<!--            android:padding="10dp">-->
+<!--        </Button>-->
 
     </LinearLayout>
 
