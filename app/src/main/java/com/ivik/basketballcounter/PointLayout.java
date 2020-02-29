@@ -64,12 +64,12 @@ public class PointLayout extends LinearLayout {
         }
     }
 
-    private void onButtonClick(String teamName) {
+    private void onButtonClick(String teamName, int by) {
         if (teamName.equals(teamName1)) {
-            pointsA++;
+            pointsA += by;
         }
         else if (teamName.equals(teamName2)) {
-            pointsB++;
+            pointsB += by;
         }
         else {
             return;
@@ -106,21 +106,21 @@ public class PointLayout extends LinearLayout {
         button1.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                onButtonClick(teamName1);
+                onButtonClick(teamName1, 1);
             }
         });
         button2 = view1.findViewById(R.id.btn2);                  // +2 points
         button2.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                onButtonClick(teamName1);
+                onButtonClick(teamName1, 2);
             }
         });
         button3 = view1.findViewById(R.id.btn3);                  // +3 points
         button3.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                onButtonClick(teamName1);
+                onButtonClick(teamName1, 3);
             }
         });
 
@@ -129,21 +129,21 @@ public class PointLayout extends LinearLayout {
         button4.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                onButtonClick(teamName2);
+                onButtonClick(teamName2, 1);
             }
         });
         button5 = view2.findViewById(R.id.btn2);                  // +2 points
         button5.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                onButtonClick(teamName2);
+                onButtonClick(teamName2, 2);
             }
         });
         button6 = view2.findViewById(R.id.btn3);                  // +3 points
         button6.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
-                onButtonClick(teamName2);
+                onButtonClick(teamName2, 3);
             }
         });
 
