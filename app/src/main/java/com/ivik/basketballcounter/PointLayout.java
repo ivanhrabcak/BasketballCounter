@@ -29,128 +29,24 @@ public class PointLayout extends LinearLayout {
     private TextView textView3;
     private TextView textView4;
 
-    public PointLayout(Context context) throws Exception {
+    public PointLayout(Context context) {
         super(context);
         inflate(context, R.layout.point_layout, this);
-//        init();
     }
 
-    public PointLayout(Context context, @Nullable AttributeSet attrs) throws Exception {
+    public PointLayout(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
-        inflate(context, R.layout.point_layout,this);
-//        init();
+        inflate(context, R.layout.point_layout, this);
     }
 
-    public PointLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) throws Exception {
+    public PointLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        inflate(context, R.layout.point_layout,this);
-//        init();
+        inflate(context, R.layout.point_layout, this);
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    public PointLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) throws Exception {
+    public PointLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
-        inflate(context, R.layout.point_layout,this);
-//        init();
-    }
-
-    @Override
-    public void onFinishInflate() {
-        super.onFinishInflate();
-        try {
-            init();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-    private void onButtonClick(String teamName, int by) {
-        if (teamName.equals(teamName1)) {
-            pointsA += by;
-        }
-        else if (teamName.equals(teamName2)) {
-            pointsB += by;
-        }
-        else {
-            return;
-        }
-    }
-
-    public void init() throws Exception {
-        //setFocusable(true);
-        pointsA = 0;
-        pointsB = 0;
-
-        teamName1 = "Team 1";
-        teamName2 = "Team 2";
-
-        //view1 = findViewById(R.id.team1point_view);
-        //view2 = findViewById(R.id.team2point_view);
-
-//        if (view1 == null) {
-//            throw new Exception("view1 == null");
-//        }
-//
-//        if (view2 == null) {
-//            throw new Exception("view2 == null");
-//        }
-
-        textView1 = findViewById(R.id.textView);
-        textView2 = findViewById(R.id.textView1);
-
-//        textView3 = findViewById(R.id.textView);
-//        textView4 = findViewById(R.id.textView1);
-//
-//        // Team 1
-//        button1 = view1.findViewById(R.id.btn1);                 // +1 point
-//        button1.setOnClickListener(new OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onButtonClick(teamName1, 1);
-//            }
-//        });
-//        button2 = view1.findViewById(R.id.btn2);                  // +2 points
-//        button2.setOnClickListener(new OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onButtonClick(teamName1, 2);
-//            }
-//        });
-//        button3 = view1.findViewById(R.id.btn3);                  // +3 points
-//        button3.setOnClickListener(new OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onButtonClick(teamName1, 3);
-//            }
-//        });
-//
-//        // Team 2
-//        button4 = view2.findViewById(R.id.btn1);                  // +1 point
-//        button4.setOnClickListener(new OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onButtonClick(teamName2, 1);
-//            }
-//        });
-//        button5 = view2.findViewById(R.id.btn2);                  // +2 points
-//        button5.setOnClickListener(new OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onButtonClick(teamName2, 2);
-//            }
-//        });
-//        button6 = view2.findViewById(R.id.btn3);                  // +3 points
-//        button6.setOnClickListener(new OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                onButtonClick(teamName2, 3);
-//            }
-//        });
-
-        textView1.setText(teamName1);
-        textView2.setText("1235");
-
-//        textView3.setText(String.valueOf(teamName2));
-//        textView4.setText(String.valueOf(pointsB));
+        inflate(context, R.layout.point_layout, this);
     }
 }
