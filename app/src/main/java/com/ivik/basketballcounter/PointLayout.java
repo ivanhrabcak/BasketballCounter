@@ -84,73 +84,73 @@ public class PointLayout extends LinearLayout {
         teamName1 = "Team 1";
         teamName2 = "Team 2";
 
-        view1 = findViewById(R.id.team1point_view);
-        view2 = findViewById(R.id.team2point_view);
+        //view1 = findViewById(R.id.team1point_view);
+        //view2 = findViewById(R.id.team2point_view);
 
-        if (view1 == null) {
-            throw new Exception("view1 == null");
-        }
+//        if (view1 == null) {
+//            throw new Exception("view1 == null");
+//        }
+//
+//        if (view2 == null) {
+//            throw new Exception("view2 == null");
+//        }
 
-        if (view2 == null) {
-            throw new Exception("view2 == null");
-        }
+        textView1 = findViewById(R.id.textView);
+        textView2 = findViewById(R.id.textView1);
 
-        textView1 = view1.findViewById(R.id.textView);
-        textView2 = view1.findViewById(R.id.textView1);
-
-        textView3 = view2.findViewById(R.id.textView);
-        textView4 = view2.findViewById(R.id.textView1);
-
-        // Team 1
-        button1 = view1.findViewById(R.id.btn1);                 // +1 point
-        button1.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onButtonClick(teamName1, 1);
-            }
-        });
-        button2 = view1.findViewById(R.id.btn2);                  // +2 points
-        button2.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onButtonClick(teamName1, 2);
-            }
-        });
-        button3 = view1.findViewById(R.id.btn3);                  // +3 points
-        button3.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onButtonClick(teamName1, 3);
-            }
-        });
-
-        // Team 2
-        button4 = view2.findViewById(R.id.btn1);                  // +1 point
-        button4.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onButtonClick(teamName2, 1);
-            }
-        });
-        button5 = view2.findViewById(R.id.btn2);                  // +2 points
-        button5.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onButtonClick(teamName2, 2);
-            }
-        });
-        button6 = view2.findViewById(R.id.btn3);                  // +3 points
-        button6.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                onButtonClick(teamName2, 3);
-            }
-        });
+//        textView3 = findViewById(R.id.textView);
+//        textView4 = findViewById(R.id.textView1);
+//
+//        // Team 1
+//        button1 = view1.findViewById(R.id.btn1);                 // +1 point
+//        button1.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onButtonClick(teamName1, 1);
+//            }
+//        });
+//        button2 = view1.findViewById(R.id.btn2);                  // +2 points
+//        button2.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onButtonClick(teamName1, 2);
+//            }
+//        });
+//        button3 = view1.findViewById(R.id.btn3);                  // +3 points
+//        button3.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onButtonClick(teamName1, 3);
+//            }
+//        });
+//
+//        // Team 2
+//        button4 = view2.findViewById(R.id.btn1);                  // +1 point
+//        button4.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onButtonClick(teamName2, 1);
+//            }
+//        });
+//        button5 = view2.findViewById(R.id.btn2);                  // +2 points
+//        button5.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onButtonClick(teamName2, 2);
+//            }
+//        });
+//        button6 = view2.findViewById(R.id.btn3);                  // +3 points
+//        button6.setOnClickListener(new OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                onButtonClick(teamName2, 3);
+//            }
+//        });
 
         textView1.setText(teamName1);
-        textView2.setText(pointsA);
+        textView2.setText("1235");
 
-        textView3.setText(String.valueOf(teamName2));
-        textView4.setText(String.valueOf(pointsB));
+//        textView3.setText(String.valueOf(teamName2));
+//        textView4.setText(String.valueOf(pointsB));
     }
 }
