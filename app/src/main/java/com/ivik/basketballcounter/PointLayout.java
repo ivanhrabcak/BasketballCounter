@@ -14,21 +14,24 @@ import android.widget.TextView;
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PointLayout extends LinearLayout {
     private int points;
     private View view;
-    private int previous;
+    private List<Integer> previous;
 
     private void backButtonClicked() {
-        points -= previous;
-        previous = 0;
+        points -= previous.get(previous.size() - 1);
+        previous.remove(previous.size() - 1);
 
         TextView tv = findViewById(R.id.textView1);
         tv.setText(String.valueOf(points));
     }
 
     private void buttonClicked(int step) {
-        previous = step;
+        previous.add(step);
         points += step;
 
         TextView tv = findViewById(R.id.textView1);
@@ -87,6 +90,7 @@ public class PointLayout extends LinearLayout {
     }
 
     public void init() {
+        previous = new ArrayList<>();
         points = 0;
         view = findViewById(R.id.teampoint_view);
 
