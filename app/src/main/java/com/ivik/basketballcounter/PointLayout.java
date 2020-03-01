@@ -70,17 +70,20 @@ public class PointLayout extends LinearLayout {
     public PointLayout(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         inflate(context, R.layout.point_layout, this);
+        init();
     }
 
     public PointLayout(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         inflate(context, R.layout.point_layout, this);
+        init();
     }
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public PointLayout(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         inflate(context, R.layout.point_layout, this);
+        init();
     }
 
     public void init() {
