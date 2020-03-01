@@ -26,55 +26,10 @@ public class MainActivity extends AppCompatActivity {
     private int previousA;
     private int previousB;
 
-    private void changeTeamNamePopup(final String teamName) {
-        AlertDialog.Builder alert = new AlertDialog.Builder(this);
-
-        alert.setTitle("Change team name:");
-        alert.setMessage("New team name:");
-
-        final EditText input = new EditText(this);
-        alert.setView(input);
-
-        alert.setPositiveButton("Change", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                TextView tv;
-                if (teamName.equals("Team 1")) {
-                    tv = team1View.findViewById(R.id.textView);
-                }
-                else {
-                    tv = team2View.findViewById(R.id.textView);
-                }
-                tv.setText(input.getText().toString());
-            }
-        });
-
-        alert.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int whichButton) {
-                return;
-            }
-        });
-        alert.show();
-    }
 
 
-    private void ButtonClicked(String teamName, int step) {
-        previousA = pointsA;
-        previousB = pointsB;
 
-        if (teamName == teamName1) {
-            pointsA += step;
-        }
-        else if (teamName == teamName2) {
-            pointsB += step;
-        }
 
-        TextView tv = team1View.findViewById(R.id.textView1);
-
-        TextView tv2 = team2View.findViewById(R.id.textView1);
-
-        tv.setText(String.valueOf(pointsA));
-        tv2.setText(String.valueOf(pointsB));
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -91,67 +46,12 @@ public class MainActivity extends AppCompatActivity {
         layout.addView(separator);
         layout.addView(team2View);
 
-        final TextView tv = team1View.findViewById(R.id.textView);
-        tv.setText("Team 1");
-        tv.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                changeTeamNamePopup("Team 1");
-            }
-        });
+        TextView textView1 = team1View.findViewById(R.id.textView);
+        TextView textView2 = team2View.findViewById(R.id.textView);
 
-        final TextView tv1 = team2View.findViewById(R.id.textView);
-        tv1.setText("Team 2");
-        tv1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                changeTeamNamePopup("Team 2");
-            }
-        });
+        textView1.setText("Team 1");
+        textView2.setText("Team 2");
 
-        Button button1 = team1View.findViewById(R.id.btn1);                 // +1 point
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ButtonClicked(teamName1, 1);
-            }
-        });
-        Button button2 = team1View.findViewById(R.id.btn2);                  // +2 points
-        button2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ButtonClicked(teamName1, 2);
-            }
-        });
-        Button button3 = team1View.findViewById(R.id.btn3);                  // +3 points
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ButtonClicked(teamName1, 3);
-            }
-        });
-
-        Button button4 = team2View.findViewById(R.id.btn1);                 // +1 point
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ButtonClicked(teamName2, 1);
-            }
-        });
-        Button button5 = team2View.findViewById(R.id.btn2);                  // +2 points
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ButtonClicked(teamName2, 2);
-            }
-        });
-        Button button6 = team2View.findViewById(R.id.btn3);                  // +3 points
-        button6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                ButtonClicked(teamName2, 3);
-            }
-        });
 
 //        Button backButton1 = team1View.findViewById(R.id.backbtn);
 //        backButton1.setOnClickListener(new View.OnClickListener() {
@@ -168,7 +68,8 @@ public class MainActivity extends AppCompatActivity {
 //            @Override
 //            public void onClick(View v) {
 //                pointsB -= previousB;
-//                tv.setText(pointsB);
+//                TextView ttv = team1View.findViewById(R.id.textView1);
+//                ttv.setText(String.valueOf(pointsB));
 //                previousB = 0;
 //            }
 //        });
