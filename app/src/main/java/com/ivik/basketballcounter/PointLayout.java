@@ -20,18 +20,21 @@ import java.util.List;
 public class PointLayout extends LinearLayout {
     private int points;
     private View view;
-    private List<Integer> previous;
+    private List<Integer> history;
 
     private void backButtonClicked() {
-        points -= previous.get(previous.size() - 1);
-        previous.remove(previous.size() - 1);
+        if (history.size() == 0) {
+            return;
+        }
+        points -= history.get(history.size() - 1);
+        history.remove(history.size() - 1);
 
         TextView tv = findViewById(R.id.textView1);
         tv.setText(String.valueOf(points));
     }
 
     private void buttonClicked(int step) {
-        previous.add(step);
+        history.add(step);
         points += step;
 
         TextView tv = findViewById(R.id.textView1);
@@ -90,7 +93,7 @@ public class PointLayout extends LinearLayout {
     }
 
     public void init() {
-        previous = new ArrayList<>();
+        history = new ArrayList<>();
         points = 0;
         view = findViewById(R.id.teampoint_view);
 
